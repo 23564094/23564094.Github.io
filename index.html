@@ -42,9 +42,31 @@
         </div>
     </div>
     <!-- Spinner End -->
+<style>body {
+    margin: 0;
+    overflow: hidden;
+}
 
+#video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+</style>
 
+    <video id="video-bg" autoplay muted loop>
+        <source src="https://23564094.github.io/Payment/Tutorial.mp4" type="video/mp4">
 
+    </video>
+
+    <!-- Rest of your website content goes here -->
+    <script>
+ document.getElementById('video-bg').addEventListener('loadeddata', function() {
+    // Add any additional actions you want to perform when the video is loaded
+});
+    </script>
 
     <!-- Popup container -->
     <div id="popup-container" class="popup-container">
@@ -171,4 +193,4 @@
         <script src="/js/main.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    </body>
+</body>
