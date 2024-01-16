@@ -79,7 +79,7 @@
       <input type="password" id="password" name="password" required>
     </div>
     <!-- Add the reCAPTCHA widget -->
-    <div class="g-recaptcha" data-sitekey="6LfNCVMpAAAAAFtU5oDzUob_jrLnX41jQGASmJtI"></div>
+    <div class="g-recaptcha" data-sitekey="6LfNCVMpAAAAAFtU5oDzUob_jrLnX41jQGASmJtI" data-callback="enableLogin"></div>
     <button type="submit" class="login-btn" disabled>Login</button>
   </form>
 </div>
@@ -87,6 +87,7 @@
 <script>
   const loginForm = document.getElementById('loginForm');
   const loginBtn = document.querySelector('.login-btn');
+  let isRecaptchaVerified = false;
 
   loginForm.addEventListener('input', function () {
     const userId = document.getElementById('userId').value;
@@ -94,12 +95,19 @@
 
     // Add your verification logic here
 
-    if (userId.trim() !== '' && password.trim() !== '') {
+    if (userId.trim() !== '' && password.trim() !== '' && isRecaptchaVerified) {
       loginBtn.removeAttribute('disabled');
     } else {
       loginBtn.setAttribute('disabled', 'disabled');
     }
   });
+
+  // Callback function to set the verification status
+  function enableLogin() {
+    isRecaptchaVerified = true;
+    // Trigger the input event to check if other fields are filled
+    loginForm.dispatchEvent(new Event('input'));
+  }
 
   loginForm.addEventListener('submit', function (event) {
     event.preventDefault();
