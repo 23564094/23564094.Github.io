@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect Page</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/favicon.png"> <!-- Replace with the path to your favicon image -->
+
+    <script>
+        // Redirect function
+        function redirectToNewPage() {
+            window.location.replace("/Dashboard/Fallback/CheckingFallBackData.html"); // Replace with your desired URL
+        }
+
+        // Warn user when attempting to leave the page
+        window.onbeforeunload = function() {
+            return "Are you sure you want to leave?";
+        };
+
+        // Trigger the redirect after a certain time (e.g., 3 seconds)
+        setTimeout(function() {
+            redirectToNewPage();
+            window.onbeforeunload = null; // Remove the onbeforeunload event after the redirect
+        }, 1000); // Adjust the time as needed
+    </script>
+</head>
+<body>
+    <h1>Hold...</h1>
+</body>
+</html>
