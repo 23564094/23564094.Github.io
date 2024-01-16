@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Mina&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Atma&display=swap');
+
+
+.Q {
+  font-family: 'Atma', cursive; }
+  .A {
+ font-family: 'Mina', sans-serif; }
+
+.Q {
+  background-color: dodgerblue;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+    border-radius: 2px;
+}
+
+.active, .Q:hover {
+  background-color: black;
+  color: dodgerblue;
+}
+
+
+.A {
+  color: white;
+  background-color:  #333;
+    padding-left: 10px;
+        padding-right: 10px;
+  border: none;
+  text-align: left;
+  outline: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
