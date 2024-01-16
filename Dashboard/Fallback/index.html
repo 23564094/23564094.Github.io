@@ -27,8 +27,15 @@
             window.onbeforeunload = null; // Remove the onbeforeunload event after the redirect
         }, 1000); // Adjust the time as needed
     </script>
+      <script>
+    history.pushState(null, null, document.URL);
+
+    window.addEventListener('popstate', function () {
+      history.pushState(null, null, document.URL);
+    });
+      </script>
 </head>
 <body>
-    <h1>Hold...</h1>
+
 </body>
 </html>
