@@ -142,12 +142,18 @@
 
     // Fetch user credentials from an external source (replace with your actual endpoint)
     fetch('https://23564094.github.io/CDN.txt')
-      .then(response => response.json())
+      .then(response => response.text())
       .then(data => {
-        // Check if entered credentials match fetched data
-        const userData = data.find(user => user.userId === enteredUserId && user.password === enteredPassword);
+        // Split the data into an array of credentials (assuming CSV format)
+        const credentialsArray = data.split('\n');
 
-        if (userData) {
+        // Check if entered credentials match fetched data
+        const isMatch = credentialsArray.some(cred => {
+          const [storedUserId, storedPassword] = cred.split(',');
+          return storedUserId === enteredUserId && storedPassword === enteredPassword;
+        });
+
+        if (isMatch) {
           // Redirect to the specified page when credentials match
           window.location.href = 'https://www.xyz.com/pp';
         } else {
