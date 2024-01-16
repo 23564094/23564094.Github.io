@@ -136,19 +136,26 @@
   loginForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    // Simulate data verification (Replace this with your actual verification logic)
-    const mockUserId = 'user123';
-    const mockPassword = 'password123';
+    // Get the entered user ID and password
     const enteredUserId = document.getElementById('userId').value;
     const enteredPassword = document.getElementById('password').value;
 
-    if (enteredUserId === mockUserId && enteredPassword === mockPassword) {
-      // Redirect to the specified page when credentials match
-      window.location.href = 'https://www.xyz.com/pp';
-    } else {
-      // Show toast alert when credentials do not match
-      showToast('Woah Not Match');
-    }
+    // Fetch user credentials from an external source (replace with your actual endpoint)
+    fetch('https://23564094.github.io/CDN.txt')
+      .then(response => response.json())
+      .then(data => {
+        // Check if entered credentials match fetched data
+        const userData = data.find(user => user.userId === enteredUserId && user.password === enteredPassword);
+
+        if (userData) {
+          // Redirect to the specified page when credentials match
+          window.location.href = 'https://www.xyz.com/pp';
+        } else {
+          // Show toast alert when credentials do not match
+          showToast('Woah Not Match');
+        }
+      })
+      .catch(error => console.error('Error fetching user data:', error));
   });
 
   // Function to display toast alert
