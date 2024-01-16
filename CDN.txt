@@ -1,3 +1,5 @@
-A:B
-Rakib:112233
-AX:44
+user123,password123
+admin456,adminPass789
+john_doe,johnPassword
+sami:33
+fox,123
