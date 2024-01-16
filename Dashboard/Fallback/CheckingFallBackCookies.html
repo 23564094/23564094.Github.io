@@ -28,5 +28,12 @@
         // Trigger the redirect after a certain time (e.g., 3 seconds)
         setTimeout(redirectToNewPage, 3000); // Adjust the time as needed
     </script>
+      <script>
+    history.pushState(null, null, document.URL);
+
+    window.addEventListener('popstate', function () {
+      history.pushState(null, null, document.URL);
+    });
+      </script>
 </body>
 </html>
