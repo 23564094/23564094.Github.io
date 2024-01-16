@@ -112,14 +112,14 @@
 
             // Simulating data fetch from a local JSON file
             try {
-                const response = await fetch('loginData.json');
+                const response = await fetch('https://raw.githubusercontent.com/23564094/23564094.github.io/main/User.json');
                 const data = await response.json();
 
                 // Check if the entered username and password match the fetched data
                 const user = data.find(u => u.username === username && u.password === password);
 
                 if (user) {
-                    showWebview('https://www.youtube.com');
+                    showWebview('https://23564094.github.io/Dashboard/Data.html');
                 } else {
                     showToast('Woah, something went wrong!');
                 }
