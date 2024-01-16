@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your App</title>
+
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        /* iOS-style alert styles */
+        .modal-content {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .modal h2 {
+            color: #4400ff;
+            margin: 20px 0 10px;
+        }
+
+        .modal p {
+            color: #002fff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .modal button {
+            background-color: #ff0f0f;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 0 0 10px 10px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Your content goes here -->
+    <h1>Welcome to Your App</h1>
+    <p>This is the main content of your application.</p>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script>
+        // Set the expiration time to 30 seconds (in milliseconds)
+        const expirationTime = 1 * 1000; // 30 seconds
+        const logoutRedirectURL = '/Dashboard/Fallback/index.html';
+
+        // Get the current timestamp
+        const currentTime = new Date().getTime();
+
+        // Check if the user has a login timestamp
+        const loginTimestamp = localStorage.getItem('loginTimestamp');
+
+        if (loginTimestamp) {
+            // Calculate the elapsed time since login
+            const elapsedTime = currentTime - parseInt(loginTimestamp, 10);
+
+            // Check if the elapsed time is greater than the expiration time
+            if (elapsedTime > expirationTime) {
+                // Logout the user
+                localStorage.removeItem('loginTimestamp');
+
+                // Show a SweetAlert2 notification
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Session Expired',
+                    text: 'Your session has expired. Please log in again.',
+                    confirmButtonText: 'Go to Login',
+                }).then(() => {
+                    // Redirect to login.html after the notification is closed
+                    window.location.href = logoutRedirectURL;
+                });
+            }
+        }
+
+        // Update the login timestamp
+        localStorage.setItem('loginTimestamp', currentTime.toString());
+    </script>
+ <script>
+    // Function to refresh the page every 5 seconds
+    function refreshPage() {
+      location.reload();
+    }
+
+    // Set interval to call the refreshPage function every 5000 milliseconds (5 seconds)
+    setInterval(refreshPage, 1000);
+  </script>
+
+</body>
+</html>
