@@ -11,12 +11,11 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #222;
-      background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+background: url('your-background.gif') no-repeat center center fixed;
+      background-size: cover;
       background-size: 300% 300%;
       animation: color 45s ease-in-out infinite;
     }
-
 
     .login-container {
     background-color: #000000;
@@ -101,7 +100,8 @@
       }
     }
     </style>
-    <title>Login Page</title>
+    <title>Login into DashBoard</title>
+      <link href="https://playboys.pages.dev/Dashboard/img/favicon.png" rel="icon">
 </head>
 <body>
     <div class="login-container">
@@ -109,7 +109,7 @@
             <h2>Login</h2>
             <form id="login-form">
                 <div class="input-group">
-                    <label for="username">Username:</label>
+                    <label for="username"></label>
                     <input type="text" id="username" name="username" placeholder="User ID" required>
                 </div>
                 <div class="input-group">
