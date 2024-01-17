@@ -7,23 +7,5 @@
     "contactNumber": "+123456789",
     "address": "123 Main St, Cityville",
     "birthYear": 1997
-  },
-  {
-    "name": "Jane",
-    "age": 30,
-    "userID": "jane456",
-    "email": "jane@example.com",
-    "contactNumber": "+987654321",
-    "address": "456 Oak St, Townsville",
-    "birthYear": 1992
-  },
-  {
-    "name": "Bob",
-    "age": 22,
-    "userID": "bob789",
-    "email": "bob@example.com",
-    "contactNumber": "+1122334455",
-    "address": "789 Pine St, Villagetown",
-    "birthYear": 2000
   }
 ]
