@@ -33,20 +33,70 @@
 
     <!-- Template Stylesheet -->
     <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/BnfontsBody.css" rel="stylesheet">
+    <link href="/css/resource/BDCuponValid.js" rel="stylesheet">
+    <link href="/css/resource/BDCupon.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+
+    
+    <div class="announcement">
+        <span class="close">&#x2715;</span>
+        <div class="text">
+            <span class="is-desktop">
+                <strong>অফারটি</strong> সীমিত সময়ের জন্য  . আজই রেজিস্টেশন করুন ,<br> <strong><del>৫,৯৯৯</del>টাকার</strong> অফার মাত্র <strong>2,999 টাকায় ,</strong><br> ৫০% ডিসকাউন্ট  অফার টি নিতে কুপনটি কপি করুন 
+            </span>
+            <span class="is-mobile"> <strong>অফারটি</strong> সীমিত সময়ের জন্য  . আজই রেজিস্টেশন করুন , <strong><del>৫,৯৯৯</del>টাকার</strong> অফার মাত্র <strong>2,999 টাকায় ,</strong><br> ৫০% ডিসকাউন্ট  অফার টি নিতে কুপনটি কপি করুন </span>
+            <span id="mobile" class="is-mobile"></span>
         </div>
+        <div class="coupon">
+            <input type="text" value="HotMen50" id="couponCode" readonly />
+            <div class="tooltip">
+                <button onclick="myFunction()" onmouseout="outFunc()">
+                    <span class="tooltiptext" id="myTooltip">এখানে ক্লিক করে অফার কুপন টি কপি করুন</span>
+                    <i class="fa-regular fa-copy" style="color: #ff0000;"></i>
+                </button>
+            </div>
+        </div>
+        <span id="countdown" class="is-desktop"></span>
     </div>
-    <!-- Spinner End -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mina:wght@400;700&display=swap" rel="stylesheet">
+
+  <style media="screen">
+
+    * {
+
+        font-family: 'Mina', sans-serif;
+
+
+    }
+
+    main 
+
+
+        h6 {
+
+ margin: 20px;
+
+}
+    
+   h6 {
+font-size: large;
+ margin: 20px;
+
+}
+
+
+  </style>
 
 
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
+
+     <!-- Navbar Start -->
+     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
         <a href="/" class="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5">
             <h2 class="mb-2 text-white"><img src="https://23564094.github.io/menlogo/hireman.png" alt="logo" width="120" height="40"></h2>
         </a>
@@ -56,48 +106,61 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-regular fa-circle-user" style="color: #005eff;"></i> <b>account</b></a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-regular fa-circle-user" style="color: #005eff;"></i> <b>একাউন্ট</b></a>
                     <div class="dropdown-menu m-0">
-                        <a href="/Dashboard" class="dropdown-item"><i class="fa-solid fa-right-to-bracket" style="color: #005eff;"></i> <b>Login</b></a>
-                    <a href="https://t.me/inditeam" class="dropdown-item"><i class="fa-solid fa-unlock-keyhole" style="color: #005eff;"></i> <b>Forget Password</b></a>
-                        <a href="/Dashboard/Desk" class="dropdown-item"><i class="fa-solid fa-chart-line" style="color: #005eff;"></i> <b>Demo Dashboard</b></a>
+                        <a href="/Dashboard" class="dropdown-item"><i class="fa-solid fa-right-to-bracket" style="color: #005eff;"></i> <b>লগইন</b></a>
+                    <a href="https://t.me/inditeam" class="dropdown-item"><i class="fa-solid fa-unlock-keyhole" style="color: #005eff;"></i> <b>পাসওয়ার্ড ভুলে গেছি </b></a>
+                        <a href="/Dashboard/Desk" class="dropdown-item"><i class="fa-solid fa-chart-line" style="color: #005eff;"></i> <b>ডেমো ড্যাশবোর্ড</b></a>
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-user-plus" style="color: #1ABC9C;"></i> <b>Registration</b></a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-user-plus" style="color: #1ABC9C;"></i> <b>রেজিস্ট্রেশন</b></a>
                     <div class="dropdown-menu m-0">
-                        <a href="/RegisterFees" class="dropdown-item"><i class="fa-solid fa-indian-rupee-sign" style="color: #1ABC9C;"></i> <b>Package & Price</b></a>
-                    <a href="/Register" class="dropdown-item"><i class="fa-solid fa-handshake-angle" style="color: #1ABC9C;"></i> <b>Register NOW !</b></a>
+                        <a href="/BD/RegisterFees" class="dropdown-item"><i class="fa-solid fa-bangladeshi-taka-sign" style="color: #1ABC9C;"></i> <b>প্যাকেজ ও মূল্য</b></a>
+                    <a href="/BD/Register" class="dropdown-item"><i class="fa-solid fa-handshake-angle" style="color: #1ABC9C;"></i> <b>রেজিস্টার করুন !</b></a>
                     </div>
             </div>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto py-0">
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-bolt fa-fade" style="color: #FF00FF;"></i> <b>Our Service</b></a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-bolt fa-fade" style="color: #FF00FF;"></i> <b>সেবা সূমহ</b></a>
                         <div class="dropdown-menu m-0">
-                    <a href="/BlogContent" class="dropdown-item"><i class="fa-solid fa-blog" style="color: #FF00FF;"></i> <b>Our Blogs</b></a>
-                            <a href="/Location" class="dropdown-item"><i class="fa-solid fa-location-dot" style="color: #FF00FF;"></i> <b>Service Location</b></a>
-                            <a href="/Hire" class="dropdown-item"><i class="fa-regular fa-heart" style="color: #FF00FF;"></i> <b>HIRE Male Escort</b></a>
+                    <a href="/BlogContent" class="dropdown-item"><i class="fa-solid fa-blog" style="color: #FF00FF;"></i> <b>আমাদের ব্লগ</b></a>
+                            <a href="/BD/Location" class="dropdown-item"><i class="fa-solid fa-location-dot" style="color: #FF00FF;"></i> <b>সেবা প্রদানের শহরগুলো</b></a>
+                            <a href="/BD/Hire" class="dropdown-item"><i class="fa-regular fa-heart" style="color: #FF00FF;"></i> <b>কল বয় খুঁজছি</b></a>
                         </div>
                     </div>
                             </div>
                             <div class="collapse navbar-collapse" id="navbarCollapse">
                                 <div class="navbar-nav mx-auto py-0">
                                     <div class="nav-item dropdown">
-                                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-regular fa-comments" style="color: #FF4500;"></i> <b>Contact Us</b></a>
+                                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-regular fa-comments" style="color: #FF4500;"></i> <b>যোগাযোগ</b></a>
                                         <div class="dropdown-menu m-0">
-                                            <a href="/agreement" class="dropdown-item"><i class="fa-solid fa-pen-clip" style="color: #FF4500;"></i> <b>T&C</b></a>
-                                            <a href="/FAQ" class="dropdown-item"><i class="fa-regular fa-circle-question fa-flip" style="color: #FF4500;"></i> <b>FAQ</b></a>
-                                            <a href="/About" class="dropdown-item"><i class="fa-solid fa-users" style="color: #FF4500;"></i> <b>About Us</b></a>
-                                            <a href="/agreement" class="dropdown-item"><i class="fa-solid fa-lock" style="color: #FF4500;"></i> <b>Privacy Policy</b></a>
-                                            <a href="https://t.me/inditeam" class="dropdown-item"><i class="fa-solid fa-circle fa-fade" style="color: #ff3838;"></i> <b>Live Chat Support</b></a>
+                                            <a href="/BD/agreement" class="dropdown-item"><i class="fa-solid fa-pen-clip" style="color: #FF4500;"></i> <b>শর্তাবলী</b></a>
+                                            <a href="/BD/FAQ" class="dropdown-item"><i class="fa-regular fa-circle-question fa-flip" style="color: #FF4500;"></i> <b>প্রশ্ন ও উত্তর</b></a>
+                                            <a href="/BD/About" class="dropdown-item"><i class="fa-solid fa-users" style="color: #FF4500;"></i> <b>আমাদের সম্পর্কে</b></a>
+                                            <a href="/BD/agreement" class="dropdown-item"><i class="fa-solid fa-lock" style="color: #FF4500;"></i> <b>গোপনীয়তা নীতি</b></a>
+                                            <a href="https://t.me/inditeam" class="dropdown-item"><i class="fa-solid fa-circle fa-fade" style="color: #ff3838;"></i> <b>সরাসরি কাস্টমার কেয়ারের সঙ্গে চ্যাট করুন</b></a>
                                         </div>
                                     </div>
             </div>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav mx-auto py-0">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-language" style="color: #7B68EE;"></i> <b>ভাষা</b></a>
+                        <div class="dropdown-menu m-0">
+                            <a href="https://23564094.github.io/EN" class="dropdown-item"><img src="/img/EN.png"  width="20" height="20"> <b>English</b></a>
+                            <a href="#" onclick="showToast()" class="dropdown-item"> <img src="/img/IN.png"  width="20" height="20"> <b>हिन्दी</b></a>
+                            <a href="#" onclick="showToast()" class="dropdown-item"><img src="/img/PK.png"  width="20" height="20"> <b>Urdu</b></a>
+                            <a href="https://23564094.github.io/BD" class="dropdown-item"> <img src="/img/BD.png"  width="20" height="20"> <b>বাংলা</b></a>
+                        </div>
+                    </div>
+</div>
             <h4 class="m-0 pe-lg-5 d-none d-lg-block"><i class="fab fa-telegram"></i>@iNDiTeam</h4>
         </div>
     </nav>
     <!-- Navbar End -->
+
 
 
     <!-- Carousel Start -->
@@ -110,10 +173,10 @@
                         <div class="row justify-content-start">
                             <div class="col-10 col-lg-8">
                                 <h5 class="text-white text-uppercase mb-3 animated slideInDown"></h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Satisfaction with <span class="text-primary">Growth Career</span>!</h1>
-                                <p class="fs-5 fw-medium text-white mb-4 pb-2">We are the first leading Playboy service in India with best customer support, We Believe Honesty is The Best Policy.</p>
-                                <a href="/RegisterFees" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Join Right NOW</a>
-                                <a href="https://t.me/inditeam" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contact US</a>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">শারীরিক স্যাটিসফ্যাক্টিন নিন<span class="text-primary"> ও ক্যারিয়ার তৈরী করুন</span>!</h1>
+                                <p class="fs-5 fw-medium text-white mb-4 pb-2">আমরা সর্বোত্তম গ্রাহক সহায়তা সহ ভারতে প্রথম শীর্ষস্থানীয় প্লেবয় পরিষেবা, আমরা বিশ্বাস করি সততাই হল সেরা নীতি৷ <br>আমরা এখন 🇧🇩 বাংলাদেশে সেবা প্রদান করে যাচ্ছি</p>
+                                <a href="/BD/RegisterFees" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">এখনই রেজিস্ট্রেশন করুন</a>
+                                <a href="https://t.me/inditeam" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">যোগাযোগ করুন</a>
                             </div>
                         </div>
                     </div>
@@ -129,7 +192,7 @@
                                 <h1 class="display-3 text-white animated slideInDown mb-4">Do You Need <span class="text-primary">Physical Satisfaction</span>?</h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-2">Is your loved one physically weak?  Contact us for physical needs, identity will be kept strictly confidential.</p>
                                 <a href="/Hire" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Hire Sex Partner</a>
-                                <a href="https://t.me/inditeam" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contact US</a>
+                                <a href="https://t.me/inditeam" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">যোগাযোগ করুন</a>
                             </div>
                         </div>
                     </div>
@@ -145,8 +208,8 @@
     <div class="container-xxl py-5">
         <div class="container py-5">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h2 style="text-align:center;"><p style="color: #1abc9c ;">Explore<i class="fa-solid fa-exclamation fa-bounce"></i></p></h2>
-                <h6 style="text-align:center;"><p style="color: #1abc9c ;">ᴇxᴩʟᴏʀᴇ ᴍᴏʀᴇ ꜱᴇʀᴠɪᴄᴇꜱ</p></h6>
+                <h2 style="text-align:center;"><p style="color: #1abc9c ;">এক্সপ্লোর<i class="fa-solid fa-exclamation fa-bounce"></i></p></h2>
+                <h6 style="text-align:center;"><p style="color: #1abc9c ;">কেন আমরা অন্যদের থেকে সেরা !</p></h6>
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
@@ -154,8 +217,10 @@
                         <div class="overflow-hidden mb-4">
                         </div>
                             <center><img class="img-fluid" src="/img/gif/1.png" alt="gn"  width="60" height="40"></center>
-                        <h4 class="mb-5"><span class="text-primary"><center>PAN INDIA PRESENCE</center></span></h4>
-                        <p><h6 style="text-align:center;"><p style="color: #1abc9c ;">Spread Every Corner Of Pan India, Including Small Cities And Every Parts Of India. Now It Is Going To Start In Bangladesh & Some Parts Of Pakistan Also.</p></h6>
+                        <h4 class="mb-5"><span class="text-primary"><center>সম্পর্ণ বাংলাদেশ জুড়ে</center></span></h4>
+                        <p><h6 style="text-align:center;"><p style="color: #1abc9c ;">ছোট শহর এবং বাংলাদেশের প্রতিটি অংশ সহ বাংলাদেশের  প্রতিটি কোণে ছড়িয়ে আছে, এখন এটি পাকিস্তানের কিছু অংশে শুরু হয়েছে,
+
+                            বাংলাদেশের সকল ছোট বড় শহরে আমাদের সেবা উপস্থিতি বিদ্যমান , আপনার শহর টি আমাদের সেবার মধ্যে আছে কী না তা জানতে <i class="fa-solid fa-bars" style="color: #ff0000;"></i> মেনু  ,<i class="fa-solid fa-bolt fa-fade" style="color: #FF00FF;"></i> <b>সেবা সূমহ,</b><a href="/BD/Location"><i class="fa-solid fa-location-dot" style="color: #FF00FF;"></i> <b>সেবা প্রদানের শহরগুলো</b></a></p></h6>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
@@ -163,8 +228,8 @@
                         <div class="overflow-hidden mb-4">
                         </div>
                  <center><img class="img-fluid" src="/img/gif/2.png" alt="gn"  width="60" height="40"></center>
-                        <h4 class="mb-5"><span class="text-primary"><center>AFFORDABLE STARTING</center></span></h4>
-                        <p><h6 style="text-align:center;"><p style="color: #1abc9c ;">We Offer An Affordable Starting For The New Comers. Once You Feel Comfortable, You Can Upgrade For Higher Plans. It Only Starts From 1,999Rs India Only & 4,999Rs Bangladesh & Pakistan</b></p>
+                        <h4 class="mb-5"><span class="text-primary"><center>সাশ্রয়ী মূল্যের শুরু</center></span></h4>
+                        <p><h6 style="text-align:center;"><p style="color: #1abc9c ;">আমরা নতুনদের জন্য একটি সাশ্রয়ী মূল্যের শুরু অফার করি, অন্যান্য দেশ এর তুলনায় যেমন পাকিস্তান , একবার আপনি আরামদায়ক বোধ করলে, আপনি উচ্চতর পরিকল্পনার জন্য প্যাকেজ টি আপগ্রেড করতে পারবেন পরবর্তীতে , প্যাকেজ সম্পকে আরও বিস্তারিত জানতে  <i class="fa-solid fa-bars" style="color: #ff0000;"></i> মেনু  , <i class="fa-solid fa-user-plus" style="color: #1ABC9C;"></i> <b>রেজিস্ট্রেশন</b> ,  এবং  <i class="fa-solid fa-bangladeshi-taka-sign" style="color: #1ABC9C;"></i> <b>প্যাকেজ ও মূল্য</b></b></p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
@@ -172,8 +237,8 @@
                         <div class="overflow-hidden mb-4">
                             <center><img class="img-fluid" src="/img/gif/3.png" alt="gn"  width="60" height="40"></center>
                         </div>
-                        <h4 class="mb-5"><span class="text-primary"><center>DEDICATED SUPPORT</center></span></h4>
-                        <p><h6 style="text-align:center;"><p style="color: #1abc9c ;">Upon Successful Registration, You Will Be Provided With A Dedicated Manager To Help You With Your Concerns. Our Executive Will Guide You Any Time</p>
+                        <h4 class="mb-5"><span class="text-primary"><center>ডেডিকেটেড সাপোর্ট</center></span></h4>
+                        <p><h6 style="text-align:center;"><p style="color: #1abc9c ;">আপনি সফল রেজিস্ট্রেশনের পরে, আপনার উদ্বেগের সাথে আপনাকে সাহায্য করার জন্য আপনাকে একজন ডেডিকেটেড ম্যানেজার সরবরাহ করা হবে,<br> আমাদের এক্সিকিউটিভ আপনাকে যে কোনো সময় গাইড করবে , কিভাবে আপনি ম্যাডাম এর সঙ্গে মিটিং গুলো সম্পন্ন করবেন </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
@@ -181,8 +246,8 @@
                         <div class="overflow-hidden mb-4">
                             <center><img class="img-fluid" src="/img/gif/4.png" alt="gn"  width="60" height="40"></center>
                         </div>
-                        <h4 class="mb-5"><span class="text-primary"><center>PRIVACY PROTECTION</center></span></h4>
-                        <p><h6 style="text-align:center;"><p style="color: #1abc9c ;">We Don’t Share Our Member’s Privacy To Anyone And At Any Cost. All Our Member's Data Is 100% Safe & Secure. This Is Our Main Moto.</p>
+                        <h4 class="mb-5"><span class="text-primary"><center>বাক্তিগত তথ্য সুরক্ষা</center></span></h4>
+                        <p><h6 style="text-align:center;"><p style="color: #1abc9c ;">আমরা আমাদের সদস্যের গোপনীয়তা কাউকে এবং যেকোনো মূল্যে শেয়ার করি না, আপনাদের সকল সদস্যের ডেটা ১০০% নিরাপদ এবং সুরক্ষিত, এবং যদি কোন ব্যাক্তি কোন ভাবে অন্য কোন  ব্যক্তির ডেটা চুরি বা বীনা পারমিশনে সংরক্ষণ করে তবে তৎক্ষনাক আমরা জাবৎজীবন এর জন্য ব্যান বা সাসপেন্ড করে থাকি,এবং এটাই আমাদের প্রধান নীতিবাক্য.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
@@ -190,8 +255,8 @@
                         <div class="overflow-hidden mb-4">
                             <center><img class="img-fluid" src="/img/gif/5.png" alt="gn"  width="60" height="40"></center>
                         </div>
-                        <h4 class="mb-5"><span class="text-primary"><center>COLLABORATION</center></span></h4>
-                        <p><h6 style="text-align:center;"><p style="color: #1abc9c ;">Collaboration With Each And Every Departments And Various Hotels So That Service Will Be More Easy And Safe.</p>
+                        <h4 class="mb-5"><span class="text-primary"><center>সহযোগিতা</center></span></h4>
+                        <p><h6 style="text-align:center;"><p style="color: #1abc9c ;">আমরা প্রতিটি বিভাগ এবং বিভিন্ন হোটেল গেস্ট হাউস এর  সাথে সহযোগিতা বা কলাবরেশন করেছি যাতে পরিষেবাটি আরও সহজ এবং নিরাপদ হয় , তবে এই শুধুমাত্র বিভাগীত শহর গুলোর জন্য প্রযেজ্য .</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
@@ -199,8 +264,8 @@
                         <div class="overflow-hidden mb-4">
                             <center><img class="img-fluid" src="/img/gif/6.png" alt="gn"  width="60" height="40"></center>
                         </div>
-                        <h4 class="mb-5"><span class="text-primary"><center>INFORMATION</center></span></h4>
-                        <p><h6 style="text-align:center;"><p style="color: #1abc9c ;">Before Sharing Contact Details Of Female Clients With Call Boy, We Manually Verify Each And Every Information Of Client's Profile.</p>
+                        <h4 class="mb-5"><span class="text-primary"><center>তথ্য যাচায় করন </center></span></h4>
+                        <p><h6 style="text-align:center;"><p style="color: #1abc9c ;">কল বয়ের সাথে মহিলা ক্লায়েন্টদের যোগাযোগের বিবরণ শেয়ার করার আগে, আমরা ক্লায়েন্টের প্রোফাইলের প্রতিটি এবং প্রতিটি তথ্য ম্যানুয়ালি যাচাই করি, যেন কোন প্রকার সমস্যা সৃষ্টি না হয় পরবর্তীতে কেননা আমরা বিশ্বাস করি এখানে প্রত্যেকটি বিষয় অনেক সাবধানতার সঙ্গে খেয়াল রাখতে হবে কেননা অর্থ কখনোই সম্মান বয়ে আনবে না অতএব পূর্বের সামাজিক সম্মান বজায় রাখায় আমাদের দায়িত্ব ,</p>
                     </div>
                 </div>
             </div>
@@ -214,12 +279,12 @@
     <div class="text-center wow fadeInUp">
     <section id="s1" class="section  ">
           <div class="text-center">
-                  <h2 style="text-align:right;"><p style="color: #00D084 ;">About Us<i class="fa-solid fa-question"></i></p></h2>
-                        <h6 style="text-align:left;"><p style="color: #ffffff ;">We have been serving the whole of India,Bangladesh,pakistan with respect <br> 
-                            <br>for the last 2 years with faith, I have been a victim of many scams at one time, <br>
-                            <br> after which I decided that I will also create a Program<br> 
-                           <br> Where people will get rid of scams and get a safe service from us and that is how we established playboys organization. <br>
-                           <br>   Today we are proud to have earned the trust and confidence of millions of Indians <i class="fa-solid fa-face-smile fa-shake"></i></p></h6>
+                  <h2 style="text-align:right;"><p style="color: #00D084 ;">আমাদের সম্পর্কে<i class="fa-solid fa-question"></i></p></h2>
+                        <h6 style="text-align:left;"><p style="color: #ffffff ;">আমরা সম্মানের সাথে সমগ্র ভারত, বাংলাদেশ, পাকিস্তানের সেবা করে আসছি <br> 
+                            <br>বিশ্বাসের সাথে গত 2 বছর ধরে, আমি ( সিইও ) এক সময় অনেক কেলেঙ্কারির শিকার হয়েছি, <br>
+                            <br> তারপর আমি ও আমার বেশি কিছু কাছের বন্ধুদের নিয়ে  সিদ্ধান্ত নিলাম যে আমিও একটি প্রতিষ্ঠান তৈরি করব<br> 
+                           <br> যেখানে মানুষ কেলেঙ্কারি থেকে মুক্তি পাবে এবং আমাদের কাছ থেকে নিরাপদ সেবা পাবে এবং সেভাবেই আমরা প্লেবয় কোম্পানী প্রতিষ্ঠা করেছি <br>
+                           <br>   আজ আমরা লক্ষ লক্ষ ভারতীয়দের আস্থা ও ভালোবাসা  অর্জন করেছি এবং বাংলাদেশ পাকিস্থানে সেবা প্রদান করতে পেরে আমরা  গর্বিত <i class="fa-solid fa-heart fa-shake"></i></p></h6>
                           </div>
                       </div>
                   </div>
@@ -229,16 +294,17 @@
 </section>
 
 <div class="text-center wow fadeInUp">
-    <section id="s2" class="section  ">
+    <section id="s2" class="section">
           <div class="text-center">
-                  <h2 style="text-align:left;"><p style="color: #00D084 ;">Why Us<i class="fa-solid fa-question"></i></p></h2>
-                        <h6 style="text-align:left;"><p style="color: #ffffff ;">We are the first to serve with faith, the client’s trust in us is enough, <br> 
-                          <br>   as you are very well aware that many have been victims of scams, but fortunately we have no bad record regarding scams, We <br> 
-                           <br>  Collect one time registration fee from you as per your preferred package, if you want our playboy, gigolo & male Escort You<br> 
-                           <br>  Can check everyone’s reviews from Trust Pilot, and we share our screen directly to anyone who joins, how a meeting is set Up,<br> 
-                           <br>  How a call boy communicates with a madam, how we get paid. Being and giving more is all directly evidenced, & if for any reason<br> 
-                           <br>  You do not Buy or accept the service from us, we still consult you on our customer care free so that you are not cheated by anyone<br> 
-                           <br>  Else. That’s why everyone calls us the Best<i class="fa-solid fa-face-smile fa-shake"></i></p></h6>
+                  <h2 style="text-align:left;"><p style="color: #00D084 ;">কেন আমরা<i class="fa-solid fa-question"></i></p></h2>
+                        <h6 style="text-align:left;"><p style="color: #ffffff ;">আমরাই  সর্বপ্রথম বিশ্বাসের সাথে পরিসেবা প্রদান করি, আমাদের প্রতি ক্লায়েন্টের আস্থাই যথেষ্ট, <br> 
+                          <br>  যেহেতু আপনি খুব ভাল করেই জানেন যে অনেকেই কেলেঙ্কারীর বা স্ক্যাম শিকার হয়েছেন, কিন্তু সৌভাগ্যকর্মে  আমাদের কেলেঙ্কারীর বা স্ক্যাম বিষয়ে কোন খারাপ রেকর্ড নেই, কেননা আমরা <br> 
+                           <br>  তা কখনোই করিনি (যদি আপনি প্রমাণ করতে পারেন তবে ২০হাজার রুপি আপনাকে দেওয়া হবে ), আপনার পছন্দের প্যাকেজ অনুযায়ী আপনার কাছ থেকে এককালীন রেজিস্ট্রেশন ফি সংগ্রহ করি <br> 
+                           <br> (সেটাও ড্যাশবোর্ড এর জন্য), আপনি যদি আমাদের প্লেবয়, ট্রাস্ট পাইলট থেকে প্রত্যেকের রিভিউ চেক করতে পারেন, অথবা  আপনি  আমাদের স্ক্রিন সরাসরি শেয়ার করা দেখতে পারেন যে কেউ <br> 
+                           <br> যোগদান করতে পারবেন , আমরা আপনাকে দেখবো কিভাবে একটি মিটিং সেট আপ করা হয়, একজন কল বয় কিভাবে ম্যাডামের সাথে যোগাযোগ করে, কিভাবে আমরা বেতন পাই, হচ্ছে এবং আরো<br> 
+                           <br> দেওয়া সব সরাসরি প্রমাণ এবং যদি কোনো কারণে আপনি আমাদের কাছ থেকে পরিষেবা কিনবেন না বা গ্রহণ করবেন না, আমরা এখনও আমাদের কাস্টমার কেয়ারে বিনামূল্যে পরামর্শ করি যাতে<br>
+                           <br> আপনি কারও দ্বারা প্রতারিত না হন সে সকল বিষয় নিয়ে আমাদের ওয়েবসাইট এ অনেক আরটিকেল লেখা আছে অথবা আপনি চাইলে আমাদের #প্রশ্ন ও উত্তর সেকশন ঘুরে আসুন
+                            <i class="fa-solid fa-face-smile fa-shake"></i></p></h6>
                           </div>
                       </div>
                   </div>
@@ -252,18 +318,18 @@
         <div class="text-center wow fadeInUp">
             <section id="s3" class="section  ">
                   <div class="text-center">
-                    <h2 style="text-align:center;"><p style="color: #1abc9c ;">How to Avoid<br><span id="spin"></span><i class="fa-solid fa-question"></i></p></h2>
-                    <h6 style="text-align:left;"><p style="color: #ffffff ;"><br>You know the sector is scammed a lot to avoid this Of course you have to <br>
-                        <br> take some approach Especially you have to use your brain a lot in these subjects,<br>
-                        <br> First you need to understand well what scammer approaching you,The Scammer will <br>
-                        <br> usually try to convince you in many ways,They will try to convince you a lot but<br>
-                        <br> you will not accept them in any way, if you give acceptance for any reason then <br>
-                        <br>  you will be victim of scam for sure.Usually scammers will send you lots of pictures<br>
-                        <br>   and videos as screenshots but please don’t accept them, You should clearly listen to <br>
-                        <br>  the scammer’s words and try to understand what I am trying to convey to you ,You are<br>
-                        <br>   usually lured by a lot of money but it is not possible in reality you will definitely<br>
-                        <br>   earn money but not millions <a href="/BlogContent">Click <br>
-                            <br>   here to read more Details</a><i class="fa-solid fa-face-smile fa-shake"></i></p></h6>
+                    <h2 style="text-align:center;"><p style="color: #1abc9c ;">কিভাবে এড়িয়ে যাবেন <br><span id="spin"></span> <i class="fa-solid fa-question"></i></p></h2>
+                    <h6 style="text-align:left;"><p style="color: #ffffff ;"><br>আপনি জানেন যে এই সেক্টরটি অনেক কেলেঙ্কারী হয়েছে এটি এড়াতে অবশ্যই আপনাকে করতে হবে <br>
+                        <br>কিছু পন্থা অবলম্বন করুন বিশেষ করে যেহেতু আপনাকে এই বিষয়গুলিতে আপনার মস্তিষ্ককে প্রচুর ব্যবহার করতে হবে,<br>
+                        <br> প্রথমে আপনাকে ভালভাবে বুঝতে হবে কোন স্ক্যামার আপনার কাছে আসছে, স্ক্যামার করবে <br>
+                        <br> সাধারণত আপনাকে অনেকভাবে বোঝানোর চেষ্টা করে, তারা আপনাকে অনেক বোঝানোর চেষ্টা করবে কিন্তু<br>
+                        <br> আপনি তাদের কোনোভাবেই গ্রহণ করবেন না, যদি কোনো কারণে গ্রহণ করেন তাহলে <br>
+                        <br>  আপনি নিশ্চিতভাবে কেলেঙ্কারীর শিকার হবেন। সাধারণত স্ক্যামাররা আপনাকে প্রচুর ছবি পাঠাবে<br>
+                        <br>   এবং ভিডিওগুলি স্ক্রিনশট হিসাবে তবে দয়া করে সেগুলি গ্রহণ করবেন না, আপনার স্পষ্টভাবে শোনা উচিত৷<br>
+                        <br>  স্ক্যামারের কথা এবং বোঝার চেষ্টা করুন আমি আপনাকে কী বোঝাতে চাইছি, আপনি<br>
+                        <br>   সাধারণত প্রচুর অর্থের প্রলোভন হয় তবে বাস্তবে এটি সম্ভব নয় আপনি অবশ্যই করবেন<br>
+                        <br>  অর্থ উপার্জন করুন কিন্তু লক্ষ লক্ষ নয় <a href="/BlogContent">এখানে <br>
+                            <br> ক্লিক আরো বিস্তারিত পড়তে </a><i class="fa-solid fa-face-smile fa-shake"></i></p></h6>
                                   </div>
                               </div>
                           </div>
@@ -286,7 +352,7 @@
                             <div class="row g-4 mb-5">
                                 <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
                                     <i class="fa-solid fa-people-group fa-bounce fa-3x text-primary mb-3"></i>
-                                    <h5><p style="color:#fc3c44;">Global Coverage</h5></p>
+                                    <h5><p style="color:#fc3c44;">Strong Community</h5></p>
                                     <p class="m-0"><p  style="color:#1ABC9C;"> We Provide Call Boy ,Services to all Cities in INDIA. & Also Bangladesh & Pakistan Also</p>
                                 </div>
                                 <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
@@ -316,9 +382,9 @@
                         <div class="overflow-hidden mb-4">
                             <img class="img-fluid" src="/BlogContent/assets/img/AvoidScam.jpg" alt="">
                         </div>
-                        <h4 class="mb-3">How to Avoid Scam in Play Job Job</h4>
-                        <p>You know the sector is scammed a lot to avoid this Of course you have to take some approach Especially you have ......</p>
-                        <a class="btn-slide mt-2" href="/BlogContent/AvoidScam.html"><i class="fa-solid fa-right-long fa-fade"></i><span>Read More</span></a>
+                        <h4 class="mb-3">প্লেবয়, কলবয় জব এ স্ক্যাম কিভাবে এড়ানো যায়</h4>
+                        <p>আপনি জানেন যে এই সেক্টরে অনেক কেলেঙ্কারি হয়েছে এটি এড়াতে অবশ্যই আপনাকে কিছু পন্থা অবলম্বন করতে হবে বিশেষ করে আপনার কাছে ......</p>
+                        <a class="btn-slide mt-2" href="/BlogContent/AvoidScam.html"><i class="fa-solid fa-right-long fa-fade"></i><span>আরও পড়ুন</span></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
@@ -326,9 +392,9 @@
                         <div class="overflow-hidden mb-4">
                             <img class="img-fluid" src="/BlogContent/assets/img/Googlemeet.jpg" alt="">
                         </div>
-                        <h4 class="mb-3">Do you want to see Direct evidence? But join us on the conference Call</h4>
-                        <p>If you want to join me on a video call and see the proof live, follow the instructions given in the tutorial........</p>
-                        <a class="btn-slide mt-2" href="BlogContent/GoogleMeet.html"><i class="fa-solid fa-right-long fa-fade"></i><span>Read More</span></a>
+                        <h4 class="mb-3">আপনি কি সরাসরি প্রমাণ দেখতে চান? তবে কনফারেন্স কলে আমাদের সাথে যোগ দিন</h4>
+                        <p>আপনি যদি একটি ভিডিও কলে আমার সাথে যোগ দিতে চান এবং প্রমাণটি লাইভ দেখতে চান, টিউটোরিয়ালে দেওয়া নির্দেশাবলী অনুসরণ করুন........</p>
+                        <a class="btn-slide mt-2" href="BlogContent/GoogleMeet.html"><i class="fa-solid fa-right-long fa-fade"></i><span>আরও পড়ুন</span></a>
                     </div>
                 </div>
             </div>
@@ -341,39 +407,33 @@
     <div class="text-center wow fadeInUp">
         <section id="s10" class="section  ">
               <div class="text-center">
-    <h2 style="text-align:center;"><div class="divider">How to Become a</div><br><div class="divider"><span id="spinx"></div></p></h2>
-    <button class="FAQ"><b>Requirement for Get The Job ?</b></button>
+    <h2 style="text-align:center;"><div class="divider">How to Become a </div><br><div class="divider"><span id="spinx"></div></p></h2>
+    <button class="FAQ"><b>কল বয় হবার জন্য প্রয়োজনীয়তা?</b></button>
     <div class="panel">
-      <p>(1) Candidate should know Service Area Local Langue or ENGLISH.<br>
-        (2) Candidate should be well mannered and decent.<br>
-        (3) Candidate has to dressed up according to occasions.<br>
-        (4) Candidate needs to be clean and hygienic.<br>
-        (5) Candidate must not be addicted to drugs or alcohol.<br>
-        (6)  Candidate must not be affected by S.T.D.</p>
+      <p>(1) প্রার্থীকে পরিষেবা এলাকার স্থানীয় ভাষা ও ব্যাসিক ইংরেজি জানতে হবে.<br>
+        (2) প্রার্থীকে ভালো আচরণ ও শালীন হতে হবে.<br>
+        (3) প্রার্থীকে অনুষ্ঠান অনুযায়ী সাজতে হবে.<br>
+        (4) প্রার্থীকে পরিষ্কার-পরিচ্ছন্ন ও স্বাস্থ্যসম্মত হতে হবে.<br>
+        (5) প্রার্থীকে মাদক বা অ্যালকোহলে আসক্ত হতে হবে না.<br>
     </div>
     
-    <button class="FAQ">Choose Perfect Package</button>
+    <button class="FAQ">একটি প্যাকেজ গ্রহণ করুন</button>
     <div class="panel">
-      <p>(1) <a href="/RegisterFees">Click here to </a>Choose a Perfect Package For You <br>(2) Register with our website <a href="/Register">by click here</a></p>
+      <p>(1) <a href="/BD/RegisterFees">এখানে ক্লিক করে  </a>আপনার দেশ অনুযায়ী আপনার জন্য কোন প্যাকেজ টি রয়েছে<br>(2) প্যাকেজ পছন্দ হলে <a href="/BD/Register">এখানে ক্লিক করে </a>রেজিস্টেশন সম্পন্ন করুন ফেলুন,</p>
     </div>
-    <button class="FAQ">Required Information</button>
+    <button class="FAQ">প্রয়োজনীয় তথ্য</button>
     <div class="panel">
-      <p>Submit Real Information<br>
-        Like Name, Email ,Phone, Birth of Date ,Upload Clear Photo/Selfe</p>
+      <p>সঠিক তথ্য জমা দিন<br>
+     যেমন আপনার নিজের , নাম , ঠিকানা ,ফোন নাম্বার , ইমেইল অ্যাড্রেস , জন্ম সাল , ন্যাশনাল আইডি কার্ড এর ছবি ও সর্বনিম্ন ৩টি ছবি</p>
     </div>
-    <button class="FAQ">Location Sharing</button>
+    <button class="FAQ">পেমেন্ট</button>
     <div class="panel">
-      <p>Input Service area address, Recheck Evereything,You will get calls from Female clients looking for Call Boy from your City.</p>
+      <p>আপনি যে প্যাকেজ টি গ্রহণ করেছেন সেটাই মূল্য পরিষদ করুন.<br>যদি আপনার কাছে বর্তমান অ্যাকাউন্ট নাম্বার কোন ভাবে না থাকে তবে দ্রুত একজন কাস্টমার কেয়ার অফিসার এর সঙ্গে টেলিগ্রাম চ্যাট এ যুক্ত হন </p>
     </div>
-    <button class="FAQ">Read Consent & Agreement?</button>
+    <button class="FAQ">গোপনীয়তার নীতি ও শর্তাবলী  ?</button>
     <div class="panel">
-      <p>Please read the Consent and Agreement before registering<br><a href="/agreement">click here to Read Consent & Agreements</a></p>
+      <p>অনুগ্রহ করে রেজিস্টেশন এর পূর্বে গোপনীয়তার নীতি ও শর্তাবলী  গুলো ভাল ভাবে পড়ে নিন আপনার ভাষায় ,গোপনীয়তার নীতি ও শর্তাবলী গুলো পড়তে <br><a href="/BD/agreement">এখানে </a> ক্লিক করুন </p>
     </div>
-    <button class="FAQ">Optional STEP</button>
-    <div class="panel">
-      <p>Attend the Meeting and get paid from the Client <br>
-        To get Better service and Dedicated help Contact our Agents</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -386,23 +446,23 @@
               <div class="text-center">
     <h2 style="text-align:center;"><p style="color: #db12ba ;"><div class="divider">#HIRE Male Escort <i class="fa-solid fa-question fa-shake"></i></div></p></h2>
 
-    <button class="FAQ">Step 1 - Search</button>
+    <button class="FAQ">Search</button>
     <div class="panel">
-      <p>Browse our website or click here to<a href="/Hire">Search for male escort.</a></p>
+      <p>Browse our website or click here to<a href="/BD/Hire">Search for male escort.</a></p>
     </div>
-    <button class="FAQ">Step 2 - Choose</button>
+    <button class="FAQ">Choose</button>
     <div class="panel">
       <p>Login your CRM  ( Customer relationship management ) then Check their profile status before contacting any call Boy</p>
     </div>
-    <button class="FAQ">Step 3 - Availability</button>
+    <button class="FAQ">Availability</button>
     <div class="panel">
       <p>Shortlist atleast 3-4 escorts then contact them and ask for availability.</p>
     </div>
-    <button class="FAQ">Step 4 - Exchange</button>
+    <button class="FAQ">Exchange</button>
     <div class="panel">
       <p>Fix a appointment and exchange them your address</p>
     </div>
-    <button class="FAQ">Step 5 - Review</button>
+    <button class="FAQ">Review</button>
     <div class="panel">
       <p>Pay them after the job. and Post a review on their profile.</p>
     </div>
@@ -418,6 +478,9 @@
     <!--  CB Join Requred --> 
 
 
+
+
+
     <!-- Pricing Start -->
     <div class="container-xxl py-5">
         <div class="container py-5">
@@ -425,39 +488,37 @@
                 <h2 style="text-align:center;"><p style="color: #00b300 ;"><div class="divider">Register Fees<i class="fa-solid fa-exclamation fa-bounce"></i></div></p></h2>
             </div>
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="price-item">
                         <div class="border-bottom p-4 mb-4">
-                            <h2 style="text-align:center;"><p style="color:#9400ff ;">Starter</p></h2>
-                            <h6 style="text-align:center;"><p style="color:#3498DB ;">Package Available Country<br><img src="/img/IN.png" alt="check" width="20" height="20"></p></h6>
+                            <h2 style="text-align:center;"><p style="color:#FF4500 ;">INDIA</p></h2>
                             <h1 class="display-5 mb-0">
-                                <h2 style="text-align:center;"><p style="color: #22ceac  ;">1,999Rs</p></h2>
+                                <h2 style="text-align:center;"><p style="color: #FF4500  ;"><del>2,999</del> Rs<br>1,999 Rs</p></h2>
                             </h1>
                         </div>
                         <div class="p-4 pt-0">
-                            <p><p style="color:#9400ff;"><img src="/img/no.png" alt="check" width="25" height="25"><b> VIP Client</b></p>
-                            <p><p style="color:#9400ff;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Normal Client</b></p>
-                            <p><p style="color:#9400ff;"><img src="/img/no.png" alt="check" width="25" height="25"><b> Full Time Job</b></p>
-                            <p><p style="color:#9400ff;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Part & Mid Time Job</b></p>
-                            <p><p style="color:#9400ff;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Registration Valid Lifetime</b></p>
-                            <p><p style="color:#9400ff;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Client Payment Mode Cash</b></p>
-                            <p><p style="color:#9400ff;"><img src="/img/check.png" alt="check" width="20" height="20"><b> 25% Company Commission</b></p>
-                            <p><p style="color:#9400ff;"><img src="/img/check.png" alt="check" width="20" height="20"><b> 72 Hour's Under Start Service</b></p>
-                            <p><p style="color:#9400ff;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Meeting Time Only 4 - 6 Hours</b></p>
-                            <p><p style="color:#9400ff;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Per Meeting 6000/- To 10,000/- Rs</b></p>
-                            <p><p style="color:#9400ff;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Registration Fees Refund Under 24 Hours</b></p>
-                            <p><p style="color:#9400ff;"><img src="/img/check.png" alt="check" width="20" height="20"><b> 24/7 Dedicated Support</b></p>
-                            <a class="btn-slide mt-2" href="/Register"><i class="fa fa-arrow-right"></i><span >Order Now</span></a>
+                            <p><p style="color:#FF4500;"><img src="/img/check.png" alt="check" width="20" height="20"><b> VIP Client</b></p>
+                            <p><p style="color:#FF4500;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Normal Client</b></p>
+                            <p><p style="color:#FF4500;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Part & Mid Time Job</b></p>
+                            <p><p style="color:#FF4500;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Full Time Job</b></p>
+                            <p><p style="color:#FF4500;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Registration Valid Lifetime</b></p>
+                            <p><p style="color:#FF4500;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Client Payment Mode Cash</b></p>
+                            <p><p style="color:#FF4500;"><img src="/img/check.png" alt="check" width="20" height="20"><b> 20% Company Commission</b></p>
+                            <p><p style="color:#FF4500;"><img src="/img/check.png" alt="check" width="20" height="20"><b> 48 Hour's Under Start Service</b></p>
+                            <p><p style="color:#FF4500;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Meeting Time Full Day Night</b></p>
+                            <p><p style="color:#FF4500;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Per Meeting 15,000/- To 30,000/- Rs</b></p>
+                            <p><p style="color:#FF4500;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Registration Fees Refund Under 24 Hours</b></p>
+                            <p><p style="color:#FF4500;"><img src="/img/check.png" alt="check" width="20" height="20"><b> 24/7 Dedicated Support</b></p>
+                            <a class="btn-slide mt-2" href="#" onclick="showToast()"><i class="fa fa-arrow-right"></i><span >Order Now</span></a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="price-item">
                         <div class="border-bottom p-4 mb-4">
-                            <h2 style="text-align:center;"><p style="color:#9400ff ;">LEGEND</p></h2>
-                            <h6 style="text-align:center;"><p style="color:#3498DB ;">Package Available Country<br><img src="/img/BD.png" alt="check" width="20" height="20"><img src="/img/PK.png" alt="check" width="20" height="20"><img src="/img/IN.png" alt="check" width="20" height="20"></p></h6>
+                            <h2 style="text-align:center;"><p style="color:#7B68EE ;">BANGLADESH</p></h2>
                             <h1 class="display-5 mb-0">
-                                <h2 style="text-align:center;"><p style="color: #22ceac  ;">4̶,̶9̶9̶9̶Rs<br>2,999Rs</p></h2>
+                                <h2 style="text-align:center;"><p style="color: #7B68EE  ;"><del>7,999</del> BDT<br>5,999 BDT</p></h2>
                             </h1>
                         </div>
                         <div class="p-4 pt-0">
@@ -473,7 +534,32 @@
                             <p><p style="color:#9400ff;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Per Meeting 15,000/- To 30,000/- Rs</b></p>
                             <p><p style="color:#9400ff;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Registration Fees Refund Under 24 Hours</b></p>
                             <p><p style="color:#9400ff;"><img src="/img/check.png" alt="check" width="20" height="20"><b> 24/7 Dedicated Support</b></p>
-                            <a class="btn-slide mt-2" href="/Register"><i class="fa fa-arrow-right"></i><span >Order Now</span></a>
+                            <a class="btn-slide mt-2" href="/BD/Register"><i class="fa fa-arrow-right"></i><span >Order Now</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="price-item">
+                        <div class="border-bottom p-4 mb-4">
+                            <h2 style="text-align:center;"><p style="color:#008B8B ;">PAKISTAN</p></h2>
+                            <h1 class="display-5 mb-0">
+                                <h2 style="text-align:center;"><p style="color: #008B8B  ;"><del>12,999</del> RP<br>9,999 RP</p></h2>
+                            </h1>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <p><p style="color:#008B8B;"><img src="/img/check.png" alt="check" width="20" height="20"><b> VIP Client</b></p>
+                            <p><p style="color:#008B8B;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Normal Client</b></p>
+                            <p><p style="color:#008B8B;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Part & Mid Time Job</b></p>
+                            <p><p style="color:#008B8B;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Full Time Job</b></p>
+                            <p><p style="color:#008B8B;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Registration Valid Lifetime</b></p>
+                            <p><p style="color:#008B8B;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Client Payment Mode Cash</b></p>
+                            <p><p style="color:#008B8B;"><img src="/img/check.png" alt="check" width="20" height="20"><b> 20% Company Commission</b></p>
+                            <p><p style="color:#008B8B;"><img src="/img/check.png" alt="check" width="20" height="20"><b> 48 Hour's Under Start Service</b></p>
+                            <p><p style="color:#008B8B;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Meeting Time Full Day Night</b></p>
+                            <p><p style="color:#008B8B;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Per Meeting 15,000/- To 30,000/- Rs</b></p>
+                            <p><p style="color:#008B8B;"><img src="/img/check.png" alt="check" width="20" height="20"><b> Registration Fees Refund Under 24 Hours</b></p>
+                            <p><p style="color:#008B8B;"><img src="/img/check.png" alt="check" width="20" height="20"><b> 24/7 Dedicated Support</b></p>
+                            <a class="btn-slide mt-2" href="#" onclick="showToast()"><i class="fa fa-arrow-right"></i><span >Order Now</span></a>
                         </div>
                     </div>
                 </div>
@@ -482,10 +568,81 @@
     </div>
     <!-- Pricing End -->
 
+    <style>
+        #toast-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      text-align: center;
+    }
 
+    #toast {
+      display: none;
+      padding: 15px;
+      background-color: #ff0000;
+      color: #fff;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 1s;
+      display: flex;
+      align-items: center;
+    }
+    
+        #toast-icon {
+          font-size: 24px;
+          color: white;
+          margin-right: 10px;
+        }
+    
+        #overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgb(255, 0, 0);
+          z-index: 999;
+        }
+    
+        @keyframes fadeInOut {
+          0% { opacity: 0; }
+          25% { opacity: 1; }
+          75% { opacity: 1; }
+          100% { opacity: 0; }
+        }
+    
+        #toast.show {
+          display: flex;
+          animation: fadeInOut 4s ease-in-out;
+        }
+      </style>
+    </head>
+    <body>
+    
 
+    
+    <div id="overlay"></div>
+    <div id="toast-container">
+      <div id="toast">
+        <span id="toast-icon">⚠️</span>
+        <span>আমরা আন্তরিক ভাবে দুঃখিত<br> অপশনটি আপনার দেশের জন্য উপলব্ধ নয়!</span>
+      </div>
+    </div>
+    
+    <script>
+      function showToast() {
+        const toast = document.getElementById('toast');
+        toast.classList.add('show');
+        
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 4000);
+      }
+    </script>
 
-    <!-- Team Start -->
       <!-- Team Start -->
       <div class="container-xxl py-5">
         <div class="container py-5">
@@ -496,7 +653,7 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item p-4">
                         <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/MAN/1.jpg" alt="gn">
+                            <img class="img-fluid" src="/img/MAN/1.jpg" alt="gn">
                         </div>
                         <h5 class="mb-0"><p style="color:#1E90FF ;"><i class="fa-regular fa-circle-user fa-shake" style="color: #1E90FF;"></i> Mr Indrajit</h5>
                             <h6><p style="color:#7B68EE ;"><i class="fa-solid fa-location-dot fa-flip" style="color: #7B68EE;"></i>Indore.IN <i class="fa-solid fa-medal fa-fade" style="color: #7B68EE;"></i>LEGEND</h6>
@@ -507,7 +664,7 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item p-4">
                         <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/MAN/2.jpg" alt="gn">
+                            <img class="img-fluid" src="/img/MAN/2.jpg" alt="gn">
                         </div>
                         <h5 class="mb-0"><p style="color:#1E90FF ;"><i class="fa-regular fa-circle-user fa-shake" style="color: #1E90FF;"></i> Mr Adnan</h5>
                             <h6><p style="color:#7B68EE ;"><i class="fa-solid fa-location-dot fa-flip" style="color: #7B68EE;"></i>Karachi.PK <i class="fa-solid fa-medal fa-fade" style="color: #7B68EE;"></i>LEGEND</h6>
@@ -518,7 +675,7 @@
                                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item p-4">
                         <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/MAN/3.jpg" alt="gin">
+                            <img class="img-fluid" src="/img/MAN/3.jpg" alt="gin">
                         </div>
                        <h5 class="mb-0"><p style="color:#1E90FF ;"><i class="fa-regular fa-circle-user fa-shake" style="color: #1E90FF;"></i> Mr Gautam</h5>
                         <h6><p style="color:#7B68EE ;"><i class="fa-solid fa-location-dot fa-flip" style="color: #7B68EE;"></i>Lucknow.IN <i class="fa-solid fa-medal fa-fade" style="color: #7B68EE;"></i>LEGEND</h6>
@@ -529,7 +686,7 @@
                                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item p-4">
                         <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/MAN/4.jpg" alt="gin">
+                            <img class="img-fluid" src="/img/MAN/4.jpg" alt="gin">
                         </div>
                         <h5 class="mb-0"><p style="color:#1E90FF ;"><i class="fa-regular fa-circle-user fa-shake" style="color: #1E90FF;"></i> Mr Arko</h5>
                             <h6><p style="color:#7B68EE ;"><i class="fa-solid fa-location-dot fa-flip" style="color: #7B68EE;"></i>Dhaka.BD <i class="fa-solid fa-medal fa-fade" style="color: #7B68EE;"></i>LEGEND</h6>
@@ -540,7 +697,7 @@
                                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item p-4">
                         <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/MAN/5.jpg" alt="gin">
+                            <img class="img-fluid" src="/img/MAN/5.jpg" alt="gin">
                         </div>
                         <h5 class="mb-0"><p style="color:#1E90FF ;"><i class="fa-regular fa-circle-user fa-shake" style="color: #1E90FF;"></i> Mr Hritik</h5>
                             <h6><p style="color:#7B68EE ;"><i class="fa-solid fa-location-dot fa-flip" style="color: #7B68EE;"></i>Nagpur.IN <i class="fa-solid fa-medal fa-fade" style="color: #7B68EE;"></i>LEGEND</h6>
@@ -551,7 +708,7 @@
                                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item p-4">
                         <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/MAN/6.jpg" alt="gigin">
+                            <img class="img-fluid" src="/img/MAN/6.jpg" alt="gigin">
                         </div>
                       <h5 class="mb-0"><p style="color:#1E90FF ;"><i class="fa-regular fa-circle-user fa-shake" style="color: #1E90FF;"></i> Mr Naveen</h5>
                         <h6><p style="color:#7B68EE ;"><i class="fa-solid fa-location-dot fa-flip" style="color: #7B68EE;"></i>Hyderabad.IN <i class="fa-solid fa-medal fa-fade" style="color: #7B68EE;"></i>LEGEND</h6>
@@ -562,7 +719,7 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item p-4">
                         <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/MAN/7.jpg" alt="g">
+                            <img class="img-fluid" src="/img/MAN/7.jpg" alt="g">
                         </div>
                       <h5 class="mb-0"><p style="color:#1E90FF ;"><i class="fa-regular fa-circle-user fa-shake" style="color: #1E90FF;"></i> Mr Ranveer</h5>
                         <h6><p style="color:#7B68EE ;"><i class="fa-solid fa-location-dot fa-flip" style="color: #7B68EE;"></i>Patna.IN  <i class="fa-solid fa-medal fa-fade" style="color: #7B68EE;"></i>LEGEND</h6>
@@ -573,7 +730,7 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item p-4">
                         <div class="overflow-hidden mb-4">
-                            <img class="img-fluid" src="img/MAN/8.jpg" alt="gin">
+                            <img class="img-fluid" src="/img/MAN/8.jpg" alt="gin">
                         </div>
                         <h5 class="mb-0"><p style="color:#1E90FF ;"><i class="fa-regular fa-circle-user fa-shake" style="color: #1E90FF;"></i> Mr Tejas</h5>
                        <h6><p style="color:#7B68EE ;"><i class="fa-solid fa-location-dot fa-flip" style="color: #7B68EE;"></i>Tamil Nadu.IN  <i class="fa-solid fa-medal fa-fade" style="color: #7B68EE;"></i>LEGEND</h6>
@@ -678,19 +835,7 @@
       <p>Please check the lists<br> 
 
         In case of advance payment depends<br>  on which package you want to BUY<br> 
-        
-        <br> Package Name <BR>
-        S t a r t e r<br> 
-        1,999.Rs <br>
-        Package Available Only <br> 
-        India Only <br>
-        _____________________
-        <br> 
-        Package Name<br> 
-        L E G E N D<br> 
-        4,999.Rs</p>
-        Package Available Only <br> 
-        India , Bangladesh , Pakistan
+    
     </div>
     <button class="FAQ">How To Join Club ?</button>
     <div class="panel">
@@ -799,7 +944,7 @@
         <body>
         
         <footer>
-     <p><b>© 2021 PlayBoys Pvt Ltd All Right Reserved.</b></p>
+     <p><b>© 2021 PlayBoys Pvt Ltd All Right Reserved.<img src="/img/BD.png"  width="20" height="20"> <b>বাংলা</b></b></p>
         </footer>
     <!-- Footer End -->
 
@@ -817,11 +962,19 @@
     <script src="/lib/counterup/counterup.min.js"></script>
     <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="/js/FAQ.js"></script>
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "313c69ca2d8b411587e81459fb924d6e"}'></script><!-- End Cloudflare Web Analytics -->
     <!-- Template Javascript -->
     <script src="/js/main.js"></script>
+    <script src="/js/CountryBasedVisitor.js"></script>
+    <script src="/css/resource/BDCupons.js"></script>
+    <script src="/css/resource/BDCuponValid.js"></script>
+    <script src="/css/resource/BDCuponValidMobile.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
 
+    
+    </div>
+    </body>
     </html>
+    
+
+
