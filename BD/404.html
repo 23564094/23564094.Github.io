@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>404 - Call Boy Service Provider all Over the India Bangladesh Pakistan</title>
+    <title>দুখিত ভুল পৃষ্ঠা - Call Boy Service Provider all Over the India Bangladesh Pakistan</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Call Boy Service Provider all Over the India Bangladesh Pakistan" name="keywords">
     <meta content="Call Boy Service Provider all Over the India Bangladesh Pakistan" name="description">
@@ -33,22 +33,71 @@
 
     <!-- Template Stylesheet -->
     <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/BnfontsBody.css" rel="stylesheet">
+    <link href="/css/resource/BDCuponValid.js" rel="stylesheet">
+    <link href="/css/resource/BDCupon.css" rel="stylesheet">
 </head>
-
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+
+    
+    <div class="announcement">
+        <span class="close">&#x2715;</span>
+        <div class="text">
+            <span class="is-desktop">
+                <strong>অফারটি</strong> সীমিত সময়ের জন্য  . আজই রেজিস্টেশন করুন ,<br> <strong><del>৫,৯৯৯</del>টাকার</strong> অফার মাত্র <strong>2,999 টাকায় ,</strong><br> ৫০% ডিসকাউন্ট  অফার টি নিতে কুপনটি কপি করুন 
+            </span>
+            <span class="is-mobile"> <strong>অফারটি</strong> সীমিত সময়ের জন্য  . আজই রেজিস্টেশন করুন , <strong><del>৫,৯৯৯</del>টাকার</strong> অফার মাত্র <strong>2,999 টাকায় ,</strong><br> ৫০% ডিসকাউন্ট  অফার টি নিতে কুপনটি কপি করুন </span>
+            <span id="mobile" class="is-mobile"></span>
         </div>
+        <div class="coupon">
+            <input type="text" value="HotMen50" id="couponCode" readonly />
+            <div class="tooltip">
+                <button onclick="myFunction()" onmouseout="outFunc()">
+                    <span class="tooltiptext" id="myTooltip">এখানে ক্লিক করে অফার কুপন টি কপি করুন</span>
+                    <i class="fa-regular fa-copy" style="color: #ff0000;"></i>
+                </button>
+            </div>
+        </div>
+        <span id="countdown" class="is-desktop"></span>
     </div>
-    <!-- Spinner End -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mina:wght@400;700&display=swap" rel="stylesheet">
+
+  <style media="screen">
+
+    * {
+
+        font-family: 'Mina', sans-serif;
+
+
+    }
+
+    main 
+
+
+        h6 {
+
+ margin: 20px;
+
+}
+    
+   h6 {
+font-size: large;
+ margin: 20px;
+
+}
+
+
+  </style>
 
 
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
-        <a href="/" class="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5">
+
+     <!-- Navbar Start -->
+     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
+        <a href="/BD/" class="navbar-brand bg-primary d-flex align-items-center px-4 px-lg-5">
             <h2 class="mb-2 text-white"><img src="https://23564094.github.io/menlogo/hireman.png" alt="logo" width="120" height="40"></h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -67,7 +116,7 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-user-plus" style="color: #1ABC9C;"></i> <b>রেজিস্ট্রেশন</b></a>
                     <div class="dropdown-menu m-0">
-                        <a href="/BD/RegisterFees" class="dropdown-item"><i class="fa-solid fa-indian-rupee-sign" style="color: #1ABC9C;"></i> <b>প্যাকেজ ও মূল্য</b></a>
+                        <a href="/BD/RegisterFees" class="dropdown-item"><i class="fa-solid fa-bangladeshi-taka-sign" style="color: #1ABC9C;"></i> <b>প্যাকেজ ও মূল্য</b></a>
                     <a href="/BD/Register" class="dropdown-item"><i class="fa-solid fa-handshake-angle" style="color: #1ABC9C;"></i> <b>রেজিস্টার করুন !</b></a>
                     </div>
             </div>
@@ -101,8 +150,8 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa-solid fa-language" style="color: #7B68EE;"></i> <b>ভাষা</b></a>
                         <div class="dropdown-menu m-0">
                             <a href="https://23564094.github.io/EN" class="dropdown-item"><img src="/img/EN.png"  width="20" height="20"> <b>English</b></a>
-                            <a href="https://23564094.github.io/IN" class="dropdown-item"> <img src="/img/IN.png"  width="20" height="20"> <b>हिन्दी</b></a>
-                            <a href="https://23564094.github.io/PK" class="dropdown-item"><img src="/img/PK.png"  width="20" height="20"> <b>Urdu</b></a>
+                            <a href="#" onclick="showToast()" class="dropdown-item"> <img src="/img/IN.png"  width="20" height="20"> <b>हिन्दी</b></a>
+                            <a href="#" onclick="showToast()" class="dropdown-item"><img src="/img/PK.png"  width="20" height="20"> <b>Urdu</b></a>
                             <a href="https://23564094.github.io/BD" class="dropdown-item"> <img src="/img/BD.png"  width="20" height="20"> <b>বাংলা</b></a>
                         </div>
                     </div>
@@ -111,6 +160,8 @@
         </div>
     </nav>
     <!-- Navbar End -->
+
+
     <style>
         #toast-container {
       position: fixed;
