@@ -1,7 +1,7 @@
         // Function to handle the redirection based on the country
         function redirectBasedOnCountry(countryCode) {
             // Replace 'us' with the country code you want to allow
-            if (countryCode.toLowerCase() !== 'bd') {
+            if (countryCode.toLowerCase() !== 'in') {
                 window.location.href = '/unavailable.html'; // Replace with your desired URL
             }
         }
